@@ -1,4 +1,7 @@
+mod back_of_house;
 mod front_of_house;
+pub use crate::back_of_house::academy;
+pub use crate::back_of_house::house;
 pub use crate::front_of_house::hosting;
 
 pub fn eat_at_restaurant() {
@@ -7,24 +10,8 @@ pub fn eat_at_restaurant() {
 
 fn deliver_order() {}
 
-mod back_of_house {
-    pub struct BreakFast {
-        pub toast: String,
-        seasonal_fruit: String,
-    }
-
-    impl BreakFast {
-        pub fn summer(toast: &str) -> BreakFast {
-            BreakFast {
-                toast: String::from(toast),
-                seasonal_fruit: String::from("peaches"),
-            }
-        }
-    }
-}
-
 pub fn eat() {
-    let mut break_fast = crate::back_of_house::BreakFast::summer("Rye");
+    let mut break_fast = house::BreakFast::summer("HEllo");
     break_fast.toast = String::from("Mutated");
 }
 
@@ -46,4 +33,5 @@ fn main() {
     };
     defineUser(user); // ! ownership
     eat_at_restaurant();
+    academy::register(String::from("Aoufi Abderahmane"), String::from("Middle"));
 }
