@@ -1,3 +1,3 @@
 pub fn register(name: String, level: String) {
-    println!("Welcome to the academy {}", name);
+    println!("Welcome to the academy {} {}", name, level);
 }
